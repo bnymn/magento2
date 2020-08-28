@@ -232,7 +232,8 @@ class InstallCommand extends AbstractSetupCommand
 
         $importConfigCommand = $this->getApplication()->find(ConfigImportCommand::COMMAND_NAME);
         $arrayInput = new ArrayInput([]);
-        $arrayInput->setInteractive($input->isInteractive());
+        $isInteractive = $input->getOption(self::INPUT_KEY_INTERACTIVE_SETUP);
+        $arrayInput->setInteractive($isInteractive);
         return $importConfigCommand->run($arrayInput, $output);
     }
 

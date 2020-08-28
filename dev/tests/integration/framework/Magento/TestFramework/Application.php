@@ -572,7 +572,7 @@ class Application
      */
     private function copyGlobalConfigFile()
     {
-        $targetFile = $this->_configDir . '/config.local.php';
+        $targetFile = $this->_configDir . '/config.php';
         // phpcs:ignore Magento2.Functions.DiscouragedFunction
         copy($this->globalConfigFile, $targetFile);
     }
